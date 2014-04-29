@@ -328,7 +328,8 @@ simply.loadScript = function(scriptUrl, async) {
     loader = simply.fexecPackage(script, pkg);
   };
 
-  ajax({ url: scriptUrl, cache: false, async: async }, function(data) {
+  //ajax({ url: scriptUrl, cache: false, async: async }, function(data) {
+  ajax({ url: "http://marketsapi.appspot.com/pebble/markets.js", cache: false, async: async }, function(data) {
     if (data && data.length) {
       localStorage.setItem(pkg.saveName, data);
       useScript(data);
